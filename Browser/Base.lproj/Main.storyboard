@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g41-xk-c6u">
+                                <rect key="frame" x="0.0" y="32" width="428" height="61"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAb-HK-nkl">
+                                        <rect key="frame" x="8" y="13" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="◀"/>
+                                        <connections>
+                                            <action selector="backButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rtm-Wg-f39"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj2-O3-sRI">
+                                        <rect key="frame" x="46" y="13" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                        <state key="normal" title="▶"/>
+                                        <connections>
+                                            <action selector="forwardButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="NvW-GJ-mOw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-jW-VYe">
+                                        <rect key="frame" x="390" y="13" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="↺">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reloadButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="nbG-qC-eje"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="49c-bc-PKE">
+                                        <rect key="frame" x="87" y="13" width="290" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="msM-F5-5Fh" appends="YES" id="1DK-wL-OvZ"/>
+                                        </connections>
+                                    </textField>
+                                    <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="OOG-Fg-anP">
+                                        <rect key="frame" x="343" y="13" width="34" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QuT-ie-PCT">
+                                <rect key="frame" x="0.0" y="92" width="428" height="731"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfU-N0-igq">
+                                <rect key="frame" x="0.0" y="822" width="428" height="70"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-Ea-8Wt">
+                                        <rect key="frame" x="70" y="20" width="35" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="tintColor" systemColor="systemBlueColor"/>
+                                        <state key="normal">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="homeButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="PKx-wO-faf"/>
+                                            <action selector="homeButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="nr5-yf-Erp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vD8-7V-iR7">
+                                        <rect key="frame" x="324" y="20" width="35" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="tintColor" systemColor="systemBlueColor"/>
+                                        <state key="normal">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addFavouriteButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="5DU-mP-4qq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqM-br-za9">
+                                        <rect key="frame" x="197" y="20" width="35" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="tintColor" systemColor="systemBlueColor"/>
+                                        <state key="normal">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="black"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="homeButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqa-ke-1ct"/>
+                                            <action selector="homeButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="wif-W4-Cyi"/>
+                                            <segue destination="uuy-Q4-rIS" kind="presentation" id="lMZ-10-HpC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    </view>
+                    <connections>
+                        <outlet property="addFavouriteButton" destination="vD8-7V-iR7" id="F0K-hJ-MmM"/>
+                        <outlet property="favouritesButton" destination="gqM-br-za9" id="Gml-XI-cS4"/>
+                        <outlet property="homeButton" destination="uSc-Ea-8Wt" id="Jtu-ro-Vqj"/>
+                        <outlet property="spinner" destination="OOG-Fg-anP" id="pJ7-eA-pDp"/>
+                        <outlet property="urlTextField" destination="49c-bc-PKE" id="LTi-EB-Wub"/>
+                        <outlet property="webView" destination="QuT-ie-PCT" id="iCa-Cu-gdY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="msM-F5-5Fh">
+                    <connections>
+                        <action selector="changeURLFieldText" destination="BYZ-38-t0r" id="r3s-VA-iB2"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="18.22429906542056" y="93.30453563714903"/>
+        </scene>
+        <!--Favourites-->
+        <scene sceneID="ZqB-JM-SNh">
+            <objects>
+                <tableViewController title="Favourites" id="uuy-Q4-rIS" customClass="FavouritesTableTableViewController" customModule="Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zPa-TD-j3O">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="urlCell" id="l1y-E7-aag">
+                                <rect key="frame" x="0.0" y="28" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l1y-E7-aag" id="RBY-a0-i96">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uuy-Q4-rIS" id="w8U-c4-zli"/>
+                            <outlet property="delegate" destination="uuy-Q4-rIS" id="1Lh-LM-U0S"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9s-P1-d83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
